@@ -1,0 +1,148 @@
+E-connect — rapport de vérification
+
+Environnement de génération : Node v20.20.1, Python 3.12, SQLite local.
+Cible recommandée du projet et CI : Node 22+ ; il faudra y relancer les tests.
+
+Syntaxe JavaScript et chemins statiques : OK. Aucune compilation front-end requise.
+
+TAP version 13
+# Subtest: health et sécurité des réponses API
+ok 1 - health et sécurité des réponses API
+  ---
+  duration_ms: 65.222436
+  ...
+# Subtest: bootstrap unique et authentification
+ok 2 - bootstrap unique et authentification
+  ---
+  duration_ms: 258.113903
+  ...
+# Subtest: secret de bootstrap requis
+ok 3 - secret de bootstrap requis
+  ---
+  duration_ms: 38.725689
+  ...
+# Subtest: mutations anonymes et CSRF refusés
+ok 4 - mutations anonymes et CSRF refusés
+  ---
+  duration_ms: 233.935377
+  ...
+# Subtest: origine étrangère interdite
+ok 5 - origine étrangère interdite
+  ---
+  duration_ms: 35.827379
+  ...
+# Subtest: CRUD classes et archivage
+ok 6 - CRUD classes et archivage
+  ---
+  duration_ms: 489.26399
+  ...
+# Subtest: classe contenant des élèves : archivage bloqué
+ok 7 - classe contenant des élèves : archivage bloqué
+  ---
+  duration_ms: 400.544394
+  ...
+# Subtest: une seule année active
+ok 8 - une seule année active
+  ---
+  duration_ms: 351.981351
+  ...
+# Subtest: notes et bornes du barème
+ok 9 - notes et bornes du barème
+  ---
+  duration_ms: 487.219329
+  ...
+# Subtest: présences : date et unicité
+ok 10 - présences : date et unicité
+  ---
+  duration_ms: 530.920331
+  ...
+# Subtest: aucune fuite du hash mot de passe
+ok 11 - aucune fuite du hash mot de passe
+  ---
+  duration_ms: 269.267497
+  ...
+# Subtest: parent : enfants rattachés uniquement et lecture seule
+ok 12 - parent : enfants rattachés uniquement et lecture seule
+  ---
+  duration_ms: 712.93843
+  ...
+# Subtest: enseignant limité aux classes affectées
+ok 13 - enseignant limité aux classes affectées
+  ---
+  duration_ms: 760.349403
+  ...
+# Subtest: références inter-établissements refusées
+ok 14 - références inter-établissements refusées
+  ---
+  duration_ms: 308.420565
+  ...
+# Subtest: approvisionnement : réception unique et stock automatique
+ok 15 - approvisionnement : réception unique et stock automatique
+  ---
+  duration_ms: 721.774483
+  ...
+# Subtest: stock négatif et archivage non vide refusés
+ok 16 - stock négatif et archivage non vide refusés
+  ---
+  duration_ms: 347.086259
+  ...
+# Subtest: désactivation invalide les sessions
+ok 17 - désactivation invalide les sessions
+  ---
+  duration_ms: 488.346222
+  ...
+# Subtest: audit et absence de secret dans les événements
+ok 18 - audit et absence de secret dans les événements
+  ---
+  duration_ms: 300.825165
+  ...
+# Subtest: pagination et recherche paramétrées
+ok 19 - pagination et recherche paramétrées
+  ---
+  duration_ms: 431.389801
+  ...
+# Subtest: hashage et validation sans DB
+ok 20 - hashage et validation sans DB
+  ---
+  duration_ms: 115.87914
+  ...
+# Subtest: rollback D1 batch : aucun dossier partiel en cas de conflit
+ok 21 - rollback D1 batch : aucun dossier partiel en cas de conflit
+  ---
+  duration_ms: 450.788148
+  ...
+# Subtest: session révoquée après modification du compte
+ok 22 - session révoquée après modification du compte
+  ---
+  duration_ms: 561.61541
+  ...
+# Subtest: session déconnectée invalidée en base
+ok 23 - session déconnectée invalidée en base
+  ---
+  duration_ms: 273.464917
+  ...
+# Subtest: corps JSON limité à 16 Kio
+ok 24 - corps JSON limité à 16 Kio
+  ---
+  duration_ms: 281.903442
+  ...
+# Subtest: compte admin protégé de la désactivation
+ok 25 - compte admin protégé de la désactivation
+  ---
+  duration_ms: 288.610348
+  ...
+1..25
+# tests 25
+# suites 0
+# pass 25
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9262.841913
+
+LIMITES
+Tests des handlers Fetch et des requêtes/contraintes SQL via un adaptateur SQLite local.
+Pas d’exécution Wrangler/workerd ou D1 distant ; pas d’installation npm dans cet environnement.
+Pas de test visuel navigateur, de charge, de déploiement réel ni d’audit de sécurité complet.
+Aucun secret, compte Cloudflare ni donnée réelle d’élève n’a été utilisé.
