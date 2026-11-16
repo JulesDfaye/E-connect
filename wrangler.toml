@@ -12,7 +12,8 @@ run_worker_first = ["/api", "/api/*"]
 binding = "DB"
 database_name = "e-connect-db"
 # Remplacer après : npx wrangler d1 create e-connect-db
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id ="dfc14e26-a178-4109-8d5a-999ae4de2173"
+"
 migrations_dir = "migrations"
 
 [observability]
